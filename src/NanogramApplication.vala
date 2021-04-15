@@ -22,21 +22,39 @@ public class NanogramApplication : Gtk.Application {
     }
 
     protected override void activate () {
-        var test_button = new Gtk.Button.with_label (_("Click me!")) {
-            margin = 12
-        };
-        test_button.clicked.connect (() => {
-            test_button.label = _("Hello World!");
-            test_button.sensitive = false;
-        });
-
         var main_window = new Gtk.ApplicationWindow (this) {
             default_width = 800,
             default_height = 600,
             title = "Nanogram"
         };
 
-        main_window.add (test_button);
+        var grid = new Gtk.Grid () {
+            row_spacing = 0,
+            column_spacing = 0
+        };
+        var hello_label = new Gtk.Label (null);
+        var hello_button = new Gtk.Button.with_label ("Say hello");
+        hello_button.clicked.connect (() => {
+            hello_label.label = "Hello world!";
+            hello_button.sensitive = false;
+        });
+        grid.attach (hello_button, 0, 0, 1, 1);
+        grid.attach_next_to (hello_label, hello_button,
+                             Gtk.PositionType.RIGHT, 1, 1);
+
+        var rotate_label = new Gtk.Label ("Horizontal");
+        var rotate_button = new Gtk.Button.with_label ("Rotate");
+        rotate_button.clicked.connect (() => {
+            rotate_label.angle = 90;
+            rotate_label.label = "Vertical";
+            rotate_button.sensitive = false;
+        });
+        grid.attach (rotate_button, 0, 1);
+        grid.attach_next_to (rotate_label, rotate_button,
+                             Gtk.PositionType.RIGHT, 1, 1);
+
+        main_window.add (grid);
+
         main_window.show_all ();
     }
 }
