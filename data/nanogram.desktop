@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nanogram
+GenericName=Telegram Client
+Comment=Chat with people
+Categories=Network;InstantMessaging;
+Keywords=Telegram;
+Type=Application
+Terminal=false
+Exec=com.github.labomoose.nanogram
+Icon=com.github.labomoose.nanogram
