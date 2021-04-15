@@ -1,4 +1,7 @@
-project('comcom.github.labomoose.nanogram', 'vala', 'c')
+project('com.github.labomoose.nanogram', 'vala', 'c')
+
+i18n = import('i18n')
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
 
 executable(
     meson.project_name(),
@@ -9,16 +12,21 @@ executable(
     install: true
 )
 
-install_data(
-    join_paths('data', 'nanogram.desktop'),
+i18n.merge_file(
+    input: join_paths('data', 'nanogram.desktop.in'),
+    output: meson.project_name() + '.desktop',
+    po_dir: join_paths(meson.source_root(), 'po'),
+    type: 'desktop',
+    install: true,
     install_dir: join_paths(get_option('datadir'), 'applications'),
-    rename: meson.project_name() + '.desktop'
 )
 
-install_data(
-    join_paths('data', 'nanogram.appdata.xml'),
-    install_dir: join_paths(get_option('datadir'), 'metainfo'),
-    rename: meson.project_name() + '.appadata.xml'
+i18n.merge_file(
+    input: join_paths('data', 'nanogram.appdata.xml.in'),
+    output: meson.project_name() + '.appdata.xml',
+    po_dir: join_paths(meson.source_root(), 'po'),
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 icon_sizes = ['16', '32', '48', '64', '128']
@@ -30,7 +38,6 @@ foreach i : icon_sizes
                                 i + 'x', 'apps'),
         rename: meson.project_name() + '.svg'
     )
-    
     install_data(
         join_paths('data', i + '.svg'),
         install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor',
@@ -38,3 +45,5 @@ foreach i : icon_sizes
         rename: meson.project_name() + '.svg'
     )
 endforeach
+
+subdir('po')

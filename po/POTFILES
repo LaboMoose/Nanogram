@@ -1,0 +1,3 @@
+src/NanogramApplication.vala
+data/nanogram.desktop.in
+data/nanogram.appdata.xml.in

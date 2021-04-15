@@ -22,11 +22,11 @@ public class NanogramApplication : Gtk.Application {
     }
 
     protected override void activate () {
-        var test_button = new Gtk.Button.with_label ("Click me!") {
+        var test_button = new Gtk.Button.with_label (_("Click me!")) {
             margin = 12
         };
         test_button.clicked.connect (() => {
-            test_button.label = "Hello World!";
+            test_button.label = _("Hello World!");
             test_button.sensitive = false;
         });
 

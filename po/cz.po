@@ -1,0 +1,53 @@
+# Language cz translations for com.github.labomoose.nanogram package.
+# Copyright (C) 2021 THE com.github.labomoose.nanogram'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.labomoose.nanogram package.
+# Automatically generated, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.labomoose.nanogram\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-15 12:02+0200\n"
+"PO-Revision-Date: 2021-04-15 12:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/NanogramApplication.vala:25
+msgid "Click me!"
+msgstr "Klinkni mě!"
+
+#: src/NanogramApplication.vala:29
+msgid "Hello World!"
+msgstr "Ahoj Světe!"
+
+#: data/nanogram.desktop.in:3 data/nanogram.appdata.xml.in:6
+msgid "Nanogram"
+msgstr "Nanogram"
+
+#: data/nanogram.desktop.in:4
+msgid "Telegram Client"
+msgstr "Telegram Klient"
+
+#: data/nanogram.desktop.in:5
+msgid "Chat with people"
+msgstr "Domluvte se s lidmi"
+
+#: data/nanogram.desktop.in:7
+msgid "Telegram;"
+msgstr "Telegram"
+
+#: data/nanogram.desktop.in:11
+msgid "com.github.labomoose.nanogram"
+msgstr "com.github.labomoose.nanogram"
+
+#: data/nanogram.appdata.xml.in:7
+msgid "Telegram client for elementary"
+msgstr "Telegram klient pro elementary"
+
+#: data/nanogram.appdata.xml.in:9
+msgid "Telegram client written in Vala"
+msgstr "Telegram klient napsaný ve Vala"
